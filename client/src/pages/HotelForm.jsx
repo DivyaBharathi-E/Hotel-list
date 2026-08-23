@@ -46,7 +46,7 @@ const HotelForm = () => {
             if (selectedHotel.image) {
                 const imageUrl = selectedHotel.image.startsWith("http")
                     ? selectedHotel.image
-                    : `http://localhost:5000/${selectedHotel.image}`;
+                    : `https://hotel-list-production.up.railway.app/${selectedHotel.image}`;
 
                 setPreview(imageUrl);
             }

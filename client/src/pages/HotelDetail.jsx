@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
-const API_URL = "http://localhost:5000/api/hotels";
+const API_URL = "https://hotel-list-production.up.railway.app/api/hotels";
 
 const HotelDetail = () => {
     const { id } = useParams();
@@ -36,12 +36,12 @@ const HotelDetail = () => {
 
         fetchHotel();
     }, [id]);
+
     useEffect(() => {
         if (hotel) {
             document.title = `${hotel.title} | Hotel Explorer`;
         }
     }, [hotel]);
-
 
     if (loading) {
         return (
@@ -74,7 +74,7 @@ const HotelDetail = () => {
 
     const imageUrl = hotel.image?.startsWith("http")
         ? hotel.image
-        : `http://localhost:5000/${hotel.image}`;
+        : `https://hotel-list-production.up.railway.app/${hotel.image}`;
 
     const mapUrl =
         `https://www.openstreetmap.org/export/embed.html?bbox=` +
@@ -86,15 +86,15 @@ const HotelDetail = () => {
 
     return (
         <main className="hotel-detail-page">
-             <Helmet>
-            <title>{hotel.title} | Hotel Explorer</title>
+            <Helmet>
+                <title>{hotel.title} | Hotel Explorer</title>
 
-            <meta
-                name="description"
-                content={hotel.description}
-            />
-        </Helmet>
-            
+                <meta
+                    name="description"
+                    content={hotel.description}
+                />
+            </Helmet>
+
             <div className="hotel-detail-container">
 
                 <button
