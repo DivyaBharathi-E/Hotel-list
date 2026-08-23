@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/hotels";
+const API_URL = "https://hotel-list-production.up.railway.app/api/hotels";
 
 export const getHotels = async ({
     search = "",
