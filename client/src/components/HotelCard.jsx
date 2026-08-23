@@ -5,7 +5,7 @@ const HotelCard = ({ hotel, onDelete }) => {
 
     const imageUrl = hotel.image?.startsWith("http")
       ? hotel.image
-      : `http://localhost:5000/${hotel.image}`;
+      : `https://hotel-list-production.up.railway.app/${hotel.image}`;
 
  const handleDelete = () => {
         onDelete(hotel.id);
