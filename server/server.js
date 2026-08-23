@@ -2,6 +2,11 @@ const express = require("express");
 const cors = require("cors");
 const pool = require("./db/database");
 const hotelRoutes = require("./routes/hotelRoutes");
+const fs = require("fs");
+
+if (!fs.existsSync("uploads")) {
+    fs.mkdirSync("uploads");
+}
 
 const app = express();
 
